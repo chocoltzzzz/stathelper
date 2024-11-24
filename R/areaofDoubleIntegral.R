@@ -1,3 +1,27 @@
+#' Calculate the area between two curves using integration
+#'
+#' This function computes the area between two curves represented by functions \code{f1} and \code{f2} over a given interval.
+#' It calculates the definite integral of the absolute difference between \code{f1} and \code{f2} over the specified bounds.
+#'
+#' @param f1 A function representing the first curve.
+#' @param f2 A function representing the second curve.
+#' @param lower_bound A numeric value representing the lower bound of the integration interval.
+#' @param upper_bound A numeric value representing the upper bound of the integration interval.
+#'
+#' @return A numeric value representing the area between the two curves over the specified interval.
+#'
+#' @details
+#' The area is computed as the definite integral of the absolute difference between \code{f2(x)} and \code{f1(x)} over the interval from \code{lower_bound} to \code{upper_bound}.
+#'
+#' @examples
+#' # Define two functions
+#' f1 <- function(x) { x^2 }
+#' f2 <- function(x) { x }
+#'
+#' # Compute the area between the curves x^2 and x from 0 to 1
+#' double_integral_area(f1, f2, 0, 1)
+#'
+#' @export
 double_integral_area <- function(f1, f2, lower_bound, upper_bound) {
   if (!is.function(f1) || !is.function(f2)) {
     stop("f1 and f2 must be valid functions!")
